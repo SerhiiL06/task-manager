@@ -16,4 +16,7 @@ const loginValidator = Joi.object({
 })
 
 
+
+
+
 module.exports = { registerValidator, loginValidator }
