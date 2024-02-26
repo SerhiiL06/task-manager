@@ -1,7 +1,6 @@
 const express = require('express')
-const { User } = require('./schemes/userSchemes')
-const { userRouter } = require('./routers/usersRouters')
-
+const { authRouters } = require('./routers/authRouters')
+const { userRouters } = require('./routers/userRouters')
 const mongoose = require('mongoose')
 
 require('dotenv').config()
@@ -13,7 +12,8 @@ mongoose.connect(process.env.MONDO_URL).then(() => console.log('Okey mongo'))
 
 app.use(express.json())
 
-app.use('/v1', userRouter)
+app.use('/v1', authRouters)
+app.use('/v1', userRouters)
 
 
 
