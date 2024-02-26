@@ -8,7 +8,6 @@ const userRouters = Router()
 userRouters.get('/users', authMiddleware, async (req, res) => {
     const userList = await User.find()
 
-    console.log(req.user)
 
     return res.json(userList)
 })

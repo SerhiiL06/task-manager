@@ -1,6 +1,7 @@
 const express = require('express')
 const { authRouters } = require('./routers/authRouters')
 const { userRouters } = require('./routers/userRouters')
+const { taskRouters } = require('./routers/taskRouters')
 const mongoose = require('mongoose')
 
 require('dotenv').config()
@@ -14,6 +15,7 @@ app.use(express.json())
 
 app.use('/v1', authRouters)
 app.use('/v1', userRouters)
+app.use('/v1', taskRouters)
 
 
 
