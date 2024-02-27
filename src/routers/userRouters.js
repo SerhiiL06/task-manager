@@ -1,8 +1,8 @@
-const { User } = require('../schemes/userSchemes')
+const { User } = require('../../schemes/userSchemes')
 const { Router } = require('express')
-const { authMiddleware } = require('../middlewares/jwtMiddle')
+const { authMiddleware } = require('../../middlewares/jwtMiddle')
 const userRouters = Router()
-const { user404 } = require('./errorHandle')
+const { user404 } = require('../exceptions/errorHandle')
 
 userRouters.get('/users', authMiddleware, async (req, res) => {
     const users = await User.find({}, { 'email': 1, 'role': 1 })

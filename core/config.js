@@ -6,4 +6,6 @@ const mongoDb = mongoose.connect(process.env.MONDO_URL, () => console.log('Okey 
 
 
 
+
+
 module.exports.mongo = { mongoDb }

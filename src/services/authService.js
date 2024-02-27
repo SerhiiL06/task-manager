@@ -1,7 +1,7 @@
-const { registerValidator, loginValidator } = require('../validators/userValidators')
+const { registerValidator, loginValidator } = require('../../validators/userValidators')
 const { hash, compare } = require('bcrypt')
 const { createToken } = require('./jwtService')
-const { User } = require('../schemes/userSchemes')
+const { User } = require('../../schemes/userSchemes')
 
 const registration = async (req, res) => {
     const { error } = registerValidator.validate(req.body)
